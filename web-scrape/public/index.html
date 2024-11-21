@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Webbi Scrapa</title>
+          <link rel="stylesheet" href="styles.css" />
+     </head>
+     <body>
+          <div class="container">
+               <h1>Get Barber Queue Time</h1>
+               <p class="description">
+                    Retrieve the waiting time length: <br />
+                    <a id="targetUrl" href="#" target="_blank">URL</a>
+               </p>
+               <button id="scrapeButton" class="btn">FETCH</button>
+
+               <div id="result" class="result"></div>
+          </div>
+
+          <script>
+               async function fetchEnv() {
+                    try {
+                         const response = await fetch("/env");
+                         if (response.ok) {
+                              const env = await response.json();
+                              document.getElementById("targetUrl").href = env.TARGET_URL;
+                              document.getElementById("targetUrl").textContent = env.TARGET_URL;
+                         } else {
+                              console.error("Failed to fetch environment variables");
+                         }
+                    } catch (error) {
+                         console.error(error);
+                    }
+               }
+
+               document.getElementById("scrapeButton").addEventListener("click", async () => {
+                    try {
+                         const response = await fetch("/scrape");
+
+                         if (response.ok) {
+                              const returnvalue = await response.text();
+                              getAndSetHTMLElement("result", returnvalue);
+                         } else {
+                              getAndSetHTMLElement("result", "Fetch Error");
+                         }
+                    } catch (error) {
+                         console.error(error);
+                    }
+               });
+
+               function getAndSetHTMLElement(id, text) {
+                    document.getElementById(id).innerHTML = text;
+               }
+
+               fetchEnv();
+          </script>
+     </body>
+</html>
