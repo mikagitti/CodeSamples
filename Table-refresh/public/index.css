@@ -1,83 +1,82 @@
-
 table {
-  width: 100%; 
-  table-layout: fixed;
-  border-collapse: collapse; 
-  margin: 20px 0 20px 0;
-  border: solid 0.1px;
-  
+     width: 100%;
+     table-layout: fixed;
+     border-collapse: collapse;
+     margin: 20px 0 20px 0;
+     border: solid 0.1px;
 }
 
-th, td {
-  padding: 2px; 
-  text-align: left; 
-  border-bottom: 1px solid #ddd; 
+th,
+td {
+     padding: 2px;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
 }
 
 th {
-  font-size: 20px;
-  background-color: #f2f2f2; 
-  color: black; 
-  text-transform: uppercase;
+     font-size: 20px;
+     background-color: #f2f2f2;
+     color: black;
+     text-transform: uppercase;
 }
 
 td {
-font-size: 24px;
+     font-size: 24px;
 }
 
 tr:hover {
-  background-color: #5b5d61; 
-  font-weight: bold;
+     background-color: #5b5d61;
+     font-weight: bold;
 }
 
-
 #clock {
-font-weight: bold;
-color: rgb(197, 249, 251);
+     font-weight: bold;
+     color: rgb(197, 249, 251);
 }
 
 .time-area {
-width: 100%;
-text-align: center;
-font-size: 2rem;
+     width: 100%;
+     text-align: center;
+     font-size: 2rem;
 }
 
 .main-container {
-  width: 75%;
-  background-color: rgb(159, 135, 131);
-  color: white;
-  border: 2px solid black;
-  margin: 20px;
-  padding: 20px;
+     width: 75%;
+     background-color: rgb(159, 135, 131);
+     color: white;
+     border: 2px solid black;
+     margin: 20px;
+     padding: 20px;
 }
 
 .stock-table-button {
-  margin: 20px 0 10px 10px;
-  padding: 5px 20px;
-  font-size: 25px;
+     margin: 20px 0 10px 10px;
+     padding: 5px 20px;
+     font-size: 25px;
 }
 
 .stock-table-button:hover {
-font-weight: bolder;
-background-color: aquamarine;
+     font-weight: bolder;
+     background-color: aquamarine;
 }
 
-@media only screen and (max-width: 400px) {
-  th, td {   
-    font-size: 14px;
-  }
+@media only screen and (max-width: 600px) {
+     th,
+     td {
+          font-size: 14px;
+     }
 
-  .time-area {
-    font-size: 1rem;
-  }
+     .time-area {
+          font-size: 1rem;
+     }
 
-  .stock-table-button {
-    margin: 10px 0 10px 10px;
-    padding: 5px 10px;
-    font-size: 14px;
-  }
+     .stock-table-button {
+          margin: 10px 0 10px 10px;
+          padding: 5px 10px;
+          font-size: 14px;
+     }
 }
 
 .errormessage {
-  font-size: 120px;
+     font-size: 120px;
 }
